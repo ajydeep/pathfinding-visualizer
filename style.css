@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: #f5f5f5;
+}
+
+#controls {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#grid-container {
+    display: grid;
+    grid-template-columns: repeat(40, 20px);
+    gap: 1px;
+}
+
+.cell {
+    width: 20px;
+    height: 20px;
+    background: white;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.cell.start {
+    background: green;
+}
+
+.cell.end {
+    background: red;
+}
+
+.cell.wall {
+    background: black;
+}
+
+.cell.visited {
+    background: lightblue;
+    animation: visitedAnimation 0.3s;
+}
+
+.cell.path {
+    background: yellow;
+    animation: pathAnimation 0.5s;
+}
+
+@keyframes visitedAnimation {
+    0% { transform: scale(0.8); }
+    100% { transform: scale(1); }
+}
+
+@keyframes pathAnimation {
+    0% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+button {
+    padding: 5px 10px;
+    cursor: pointer;
+}
